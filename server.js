@@ -17,7 +17,7 @@ app.use(cors())
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
-  accessToken: '48fa930189cb407189c506e0b414fee9',
+  accessToken: '081068d94e79478e833c95bfdc9fb036',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
@@ -107,4 +107,5 @@ app.get("/api/player", (req, res) => {
 
 app.listen(8000, () => {
   console.log(`Listening on 8000`);
+  rollbar.log('Server went up');
 });
